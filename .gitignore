@@ -8,3 +8,9 @@
 !requirements.txt
 !README*
 !.gitignore
+
+# explicitly ignore virtual environment
+venv/
+env/
+.venv/
+.env/
