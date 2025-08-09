@@ -24,26 +24,26 @@ for d in (UPLOADS_DIR, EMBEDS_DIR, TMP_DIR, OUTPUTS_DIR):
 
 manager = OpenVoiceManager()
 
-@app.get("/")
-async def home():
-    html_content = '''
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8" />
-    <title>文件上传和文本输入</title>
-</head>
-<body>
-    <p>请上传文件并输入文本</p>
-    <form action="/clone" method="post" enctype="multipart/form-data">
-        <input type="file" name="audio" required />
-        <input type="text" name="text" placeholder="请输入描述" required />
-        <button type="submit">上传</button>
-    </form>
-</body>
-</html>
-    '''
-    return HTMLResponse(html_content)
+# @app.get("/")
+# async def home():
+#     html_content = '''
+# <!DOCTYPE html>
+# <html lang="zh-CN">
+# <head>
+#     <meta charset="UTF-8" />
+#     <title>文件上传和文本输入</title>
+# </head>
+# <body>
+#     <p>请上传文件并输入文本</p>
+#     <form action="/clone" method="post" enctype="multipart/form-data">
+#         <input type="file" name="audio" required />
+#         <input type="text" name="text" placeholder="请输入描述" required />
+#         <button type="submit">上传</button>
+#     </form>
+# </body>
+# </html>
+#     '''
+#     return HTMLResponse(html_content)
 
 
 @app.post("/clone")
