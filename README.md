@@ -1,6 +1,3 @@
-明白了！这是完整的 README.md 源代码 markdown 格式，你可以直接复制保存为 `README.md` 文件：
-
-````markdown
 # OpenVoice FastAPI 服务
 
 本项目基于 [OpenVoice](https://github.com/myshell-ai/OpenVoice) 进行二次封装，提供语音合成功能的 FastAPI 接口服务。
