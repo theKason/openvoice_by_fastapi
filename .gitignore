@@ -1,13 +1,28 @@
+# Python cache and notebook checkpoints
 __pycache__/
 .ipynb_checkpoints/
-processed
-outputs
-outputs_v2
-checkpoints
-checkpoints_v2
-trash
-examples*
-.env
-build
-*.egg-info/
-*.zip
+*.pyc
+
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+
+# openvoice_service-specific
+openvoice_service/__pycache__/
+openvoice_service/.ipynb_checkpoints/
+openvoice_service/processed/
+openvoice_service/outputs/
+openvoice_service/outputs_v2/
+openvoice_service/checkpoints/
+openvoice_service/checkpoints_v2/
+openvoice_service/trash/
+openvoice_service/examples*
+openvoice_service/.env
+openvoice_service/build/
+openvoice_service/*.egg-info/
+openvoice_service/*.zip
+
+# User data - ignore entire directory
+user_data/
