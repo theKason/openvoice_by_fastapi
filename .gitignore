@@ -1,0 +1,10 @@
+# ignore all files
+*
+
+# preserve necessary ones
+!docs/
+!utils/
+!main.py
+!requirements.txt
+!README*
+!.gitignore

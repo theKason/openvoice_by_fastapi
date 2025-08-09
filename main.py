@@ -3,11 +3,11 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent / "openvoice_service"))
 
 from fastapi import FastAPI, UploadFile, File, Form
-from fastapi.responses import FileResponse, JSONResponse
+from fastapi.responses import FileResponse, JSONResponse, HTMLResponse
 import uuid
 import torch
 
-from utilts.model import OpenVoiceManager
+from utils.model import OpenVoiceManager
 
 app = FastAPI()
 
@@ -23,6 +23,27 @@ for d in (UPLOADS_DIR, EMBEDS_DIR, TMP_DIR, OUTPUTS_DIR):
     d.mkdir(parents=True, exist_ok=True)
 
 manager = OpenVoiceManager()
+
+@app.get("/")
+async def home():
+    html_content = '''
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <title>文件上传和文本输入</title>
+</head>
+<body>
+    <p>请上传文件并输入文本</p>
+    <form action="/clone" method="post" enctype="multipart/form-data">
+        <input type="file" name="audio" required />
+        <input type="text" name="text" placeholder="请输入描述" required />
+        <button type="submit">上传</button>
+    </form>
+</body>
+</html>
+    '''
+    return HTMLResponse(html_content)
 
 
 @app.post("/clone")
@@ -71,7 +92,7 @@ async def clone_voice(
 
     # 4) Serve the file directly, with embed_id in headers
     response = FileResponse(
-        str(out_wav),
+        path=str(out_wav),
         media_type="audio/wav",
         filename=f"{embed_id}.wav"
     )
