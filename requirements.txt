@@ -17,6 +17,6 @@ langid==1.1.6
 fastapi[standard]
 torch
 torchaudio
-transformers==4.19.4
-tokenizers==0.12.1
+transformers>=4.20.0
+tokenizers>=0.13,<0.15
 melo
