@@ -42,6 +42,26 @@ pip install git+https://github.com/myshell-ai/MeloTTS.git
 python -m unidic download
 ```
 
+## Download Checkpoints
+
+Download the required checkpoint files and extract them to the `checkpoints_v2` folder:
+
+```bash
+# Create checkpoints directory
+mkdir -p openvoice_service/checkpoints_v2
+
+# Download checkpoint files
+wget https://myshell-public-repo-host.s3.amazonaws.com/openvoice/checkpoints_v2_0417.zip
+
+# Extract to checkpoints_v2 folder
+unzip checkpoints_v2_0417.zip -d openvoice_service/checkpoints_v2/
+
+# Clean up downloaded zip file
+rm checkpoints_v2_0417.zip
+```
+
+**Note:** Ensure the checkpoint files are properly extracted to the `checkpoints_v2` folder within the `openvoice_service` directory.
+
 ## Install Project Dependencies
 
 Install the dependencies in the `requirements.txt` file in the project root directory:
