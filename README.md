@@ -4,6 +4,21 @@ This project is based on [OpenVoice](https://github.com/myshell-ai/OpenVoice) fo
 
 ---
 
+## Project Structure
+
+```
+openvoice_api/
+├── main.py                 # FastAPI application entry point
+├── requirements.txt        # Python dependencies
+├── README.md              # Project documentation
+└── openvoice_service/     # OpenVoice source code (cloned from upstream)
+    ├── setup.py           # OpenVoice package setup
+    ├── requirements.txt   # OpenVoice dependencies
+    └── ...                # OpenVoice source files
+```
+
+---
+
 ## Environment Setup
 
 It is recommended to use Conda to create a Python 3.9 virtual environment:
