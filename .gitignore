@@ -7,6 +7,7 @@
 !main.py
 !requirements.txt
 !README*
+!DOCKER_USAGE.md
 !.gitignore
 
 # explicitly ignore virtual environment
